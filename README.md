@@ -13,38 +13,38 @@ Must have an IDE to play this game (IDLE, PyCharm, Spyder, Eclipse, PyDev, Visua
 This game is a virtual Python imitation of Eric Solomon's Black Box Game, which can be found here https://en.wikipedia.org/wiki/Black_Box_(game). Users can shoot rays from rows 0 and 9 or columns 0 and 9 (excluding the 4 corners). Atoms must be placed somewhere in rows 1-8 and columns 1-8. A user starts with 25 points and the goal of the game is to hit all the atoms while maintaining the highest score possible. Everytime a ray enters the box, a user gets deducted 1 point. If the ray exits in a different location than the entry point, another point is deducted. Rays can either hit an atom, deflect off an atom, reflect off an atom, double deflect off an atom, or completely miss an atom. These conditions are explained more in depth in the wikipedia link provided above. Users can also guess the location of an atom. If guessed incorrectly, 5 points will be deducted from the user. 
 
 ## How to Play
-Step 1: create a new instance of the BlackBoxGame class
+Below is an example of how you could play the game:
+
+Step 1: Create a new instance of the BlackBoxGame class and initialize where the atoms will be.
 ```
 game = BlackBoxGame([(3,2),(1,7),(4,6),(8,8)])
+```
+Step 2: Choose a valid place on the board to shoot the initial ray.
+```
+game.shoot_ray(0,2)
+```
+Step 3:Depending on the path of your ray, you can try guessing where an atom is.
+```
+game.guess_atom(5,5)
+```
+Step 4: Through the game, you can check your score to determine how the ray interacted with the different atoms in the box.
+```
+game.get_score()
+```
+Step 5: If you want to check how many atoms are left, you can enter the following command.
+```
+game.atoms_left()
 ```
 
 ## Built With
 
-* Node.Js - used for our server environment
-* Express - used to create the API routes 
-* MySQL - used to store data of trips, activities, and users
-* Plop -node package used to create structure of our app, specifically presentational components /controller components and express controllers/ express routers. 
-* Sequelize - our orm to map object syntax onto our MySQL database schemas
-* React - used to create our front end display 
-* Reactstrap/Bootstrap - used to style our app
-* Javascript - client side programming language to handle functionality
-* Auth0 - used to authenticate and authorize users 
+* Python
 
 ## Contributing
 
-N/A at this time
+When contributing to this repository, please first discuss the change you wish to make via issue, email (samuelpai16@gmail.com), or any other method with the owners of this repository before making a change. Building a user interface would be a contributing priority for this game. 
 
-## Authors
+## Author
 
 * **Sam Pai**
-* **DivyaGayathri Enjamuri**
-* **Max Reinmueller**
-* **Karishma Hattar**
 
-## License
-
-
-
-## Acknowledgments
-
-* The instructional staff at the UCSD Extention's Web Development Bootcamp
